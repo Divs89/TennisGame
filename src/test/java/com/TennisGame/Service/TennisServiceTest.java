@@ -39,8 +39,26 @@ public class TennisServiceTest {
 	}
 	
 	@Test
+	public void fifteenLove() {
+		result = test.getScore(1, 0);
+		assertEquals("Fifteen, Love",result);
+	}
+	
+	@Test
+	public void thirtyLove() {
+		result = test.getScore(2, 0);
+		assertEquals("Thirty, Love",result);
+	}
+	
+	@Test
+	public void fortyLove() {
+		result = test.getScore(3, 0);
+		assertEquals("Forty, Love",result);
+	}
+	
+	@Test
 	public void Invalid() {
-		result = test.getScore(0, 7);
+		result = test.getScore(7,0);
 		assertEquals("invalid Score",result);
 	}
 	

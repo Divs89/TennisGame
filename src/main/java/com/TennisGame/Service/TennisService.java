@@ -25,7 +25,7 @@ public String getScore(int playerOne, int playerTwo) {
 			return "Love - All";
 			}
 			else  {
-			return (playerOneScore==0 && playerTwoScore <=3)?"Love, "+score.get(playerTwoScore):"invalid Score";
+			return (playerOneScore<=3 && playerTwoScore <=3)?score.get(playerOneScore)+", "+score.get(playerTwoScore):"invalid Score";
 			}
 		}
 		else
