@@ -110,5 +110,16 @@ public class TennisServiceTest {
 		assertEquals("PlayerTwo Advantage",result);
 	}
 	
+	@Test
+	public void playerOneWin() {
+		result = test.getScore(5,3);
+		assertEquals("PlayerOne Wins the Game",result);
+	}	
+			
+	@Test
+	public void playerTwoWin() {
+		result = test.getScore(2,5);
+		assertEquals("PlayerTwo Wins the Game",result);
+	}
 
 }

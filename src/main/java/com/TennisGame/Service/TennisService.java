@@ -27,6 +27,9 @@ public class TennisService {
 			else if((playerOneScore==4 && playerTwoScore ==3)|| (playerOneScore ==3 && playerTwoScore==4)){
 				return (playerOneScore >3)?"PlayerOne Advantage":"PlayerTwo Advantage";	
 				}
+			else if((playerOneScore==5 && playerTwoScore <=3)|| (playerOneScore <=3 && playerTwoScore==5)){
+				return (playerOneScore >3)?"PlayerOne Wins the Game":"PlayerTwo Wins the Game";	
+				}
 			else  {
 			return (playerOneScore<=3 && playerTwoScore <=3)?score.get(playerOneScore)+", "+score.get(playerTwoScore):"invalid Score";
 			}
