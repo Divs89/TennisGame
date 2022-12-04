@@ -21,12 +21,12 @@ public String getScore(int playerOne, int playerTwo) {
 		this.playerTwoScore = playerTwo;
 	
 		if(playerOneScore>=0 && playerTwoScore >=0) {
-			if(playerOneScore==0 && playerTwoScore ==0) {
-			return "Love - All";
-			}
-			else if(playerOneScore==3 && playerTwoScore ==3) {
+			if(playerOneScore==3 && playerTwoScore ==3) {
 			return "Deuce";	
 			}
+			else if(playerOneScore == playerTwoScore) {
+				return score.get(playerOneScore)+" - All";	
+				}
 			else  {
 			return (playerOneScore<=3 && playerTwoScore <=3)?score.get(playerOneScore)+", "+score.get(playerTwoScore):"invalid Score";
 			}

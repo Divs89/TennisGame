@@ -74,5 +74,34 @@ public class TennisServiceTest {
 		assertEquals("Deuce",result);
 	}
 	
+	@Test
+	public void fifteenAll() {
+		result = test.getScore(1, 1);
+		assertEquals("Fifteen - All",result);
+	}
+	
+	@Test
+	public void thirtyAll() {
+		result = test.getScore(2, 2);
+		assertEquals("Thirty - All",result);
+	}
+	
+	@Test
+	public void thirtyFifteen() {
+		result = test.getScore(2, 1);
+		assertEquals("Thirty, Fifteen",result);
+	}
+	
+	@Test
+	public void thirtyForty() {
+		result = test.getScore(2, 3);
+		assertEquals("Thirty, Forty",result);
+	}
+	
+	@Test
+	public void fifteenForty() {
+		result = test.getScore(1, 3);
+		assertEquals("Fifteen, Forty",result);
+	}
 	
 }
