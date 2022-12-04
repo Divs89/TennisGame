@@ -121,5 +121,11 @@ public class TennisServiceTest {
 		result = test.getScore(2,5);
 		assertEquals("PlayerTwo Wins the Game",result);
 	}
+	
+	@Test
+	public void winByMorePoints() {
+		result = test.getScore(15,17);
+		assertEquals("PlayerTwo Wins the Game",result);
+	}
 
 }
