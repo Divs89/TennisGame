@@ -9,23 +9,23 @@ public class TennisService {
 	int playerOneScore;
 	int playerTwoScore;
 	
-HashMap<Integer,String> score = new HashMap<Integer,String>(){{
+	HashMap<Integer,String> score = new HashMap<Integer,String>(){{
         put(0, "Love");
         put(1, "Fifteen");
         put(2, "Thirty");
         put(3, "Forty");
-}};
+	}};
 	
-public String getScore(int playerOne, int playerTwo) {
+	public String getScore(int playerOne, int playerTwo) {
 		this.playerOneScore = playerOne;
 		this.playerTwoScore = playerTwo;
 	
 		if(playerOneScore>=0 && playerTwoScore >=0) {
-			if(playerOneScore==3 && playerTwoScore ==3) {
-			return "Deuce";	
+			if(playerOneScore == playerTwoScore) {
+			return (playerOneScore == 3)?"Deuce":score.get(playerOneScore)+" - All";	
 			}
-			else if(playerOneScore == playerTwoScore) {
-				return score.get(playerOneScore)+" - All";	
+			else if((playerOneScore==4 && playerTwoScore ==3)|| (playerOneScore ==3 && playerTwoScore==4)){
+				return (playerOneScore >3)?"PlayerOne Advantage":"PlayerTwo Advantage";	
 				}
 			else  {
 			return (playerOneScore<=3 && playerTwoScore <=3)?score.get(playerOneScore)+", "+score.get(playerTwoScore):"invalid Score";
@@ -33,8 +33,10 @@ public String getScore(int playerOne, int playerTwo) {
 		}
 		else
 			return "invalid Score";
-}
+	}
+
+	
+
 
 }
-
 

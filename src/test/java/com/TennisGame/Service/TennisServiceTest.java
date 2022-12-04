@@ -57,12 +57,6 @@ public class TennisServiceTest {
 	}
 	
 	@Test
-	public void Invalid() {
-		result = test.getScore(7,0);
-		assertEquals("invalid Score",result);
-	}
-	
-	@Test
 	public void InvalidInput() {
 		result = test.getScore(0, -1);
 		assertEquals("invalid Score",result);
@@ -104,4 +98,17 @@ public class TennisServiceTest {
 		assertEquals("Fifteen, Forty",result);
 	}
 	
+	@Test
+	public void playerOneAdvantage() {
+		result = test.getScore(4,3);
+		assertEquals("PlayerOne Advantage",result);
+	}
+	
+	@Test
+	public void playerTwoAdvantage() {
+		result = test.getScore(3,4);
+		assertEquals("PlayerTwo Advantage",result);
+	}
+	
+
 }
