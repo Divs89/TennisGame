@@ -68,5 +68,11 @@ public class TennisServiceTest {
 		assertEquals("invalid Score",result);
 	}
 	
+	@Test
+	public void deuce() {
+		result=test.getScore(3, 3);
+		assertEquals("Deuce",result);
+	}
+	
 	
 }
