@@ -18,7 +18,7 @@ public class TennisServiceTest {
 
 	@Test
 	public void loveAll() {
-		result = test.getScore(0, 0);
+		result = test.deuce(0, 0);
 		assertEquals("Love - All",result);
 	}
 	
@@ -26,19 +26,19 @@ public class TennisServiceTest {
 	
 	@Test
 	public void loveFifteen() {
-		result = test.getScore(0, 1);
+		result = test.deuce(0, 1);
 		assertEquals("Love, Fifteen",result);
 	}
 	
 	@Test
 	public void loveThirty() {
-		result = test.getScore(0, 2);
+		result = test.deuce(0, 2);
 		assertEquals("Love, Thirty",result);
 	}
 	
 	@Test
 	public void loveForty() {
-		result = test.getScore(0, 3);
+		result = test.deuce(0, 3);
 		assertEquals("Love, Forty",result);
 	}
 	
@@ -46,19 +46,19 @@ public class TennisServiceTest {
 	
 	@Test
 	public void fifteenLove() {
-		result = test.getScore(1, 0);
+		result = test.deuce(1, 0);
 		assertEquals("Fifteen, Love",result);
 	}
 	
 	@Test
 	public void thirtyLove() {
-		result = test.getScore(2, 0);
+		result = test.deuce(2, 0);
 		assertEquals("Thirty, Love",result);
 	}
 	
 	@Test
 	public void fortyLove() {
-		result = test.getScore(3, 0);
+		result = test.deuce(3, 0);
 		assertEquals("Forty, Love",result);
 	}
 	
@@ -74,7 +74,7 @@ public class TennisServiceTest {
 	
 	@Test
 	public void deuce() {
-		result=test.getScore(3, 3);
+		result=test.deuce(3, 3);
 		assertEquals("Deuce",result);
 	}
 	
@@ -82,7 +82,7 @@ public class TennisServiceTest {
 	
 	@Test
 	public void fifteenAll() {
-		result = test.getScore(1, 1);
+		result = test.deuce(1, 1);
 		assertEquals("Fifteen - All",result);
 	}
 	
@@ -90,7 +90,7 @@ public class TennisServiceTest {
 	
 	@Test
 	public void thirtyAll() {
-		result = test.getScore(2, 2);
+		result = test.deuce(2, 2);
 		assertEquals("Thirty - All",result);
 	}
 	
@@ -98,19 +98,19 @@ public class TennisServiceTest {
 	
 	@Test
 	public void thirtyFifteen() {
-		result = test.getScore(2, 1);
+		result = test.deuce(2, 1);
 		assertEquals("Thirty, Fifteen",result);
 	}
 	
 	@Test
 	public void thirtyForty() {
-		result = test.getScore(2, 3);
+		result = test.deuce(2, 3);
 		assertEquals("Thirty, Forty",result);
 	}
 	
 	@Test
 	public void fifteenForty() {
-		result = test.getScore(1, 3);
+		result = test.deuce(1, 3);
 		assertEquals("Fifteen, Forty",result);
 	}
 	
@@ -118,7 +118,7 @@ public class TennisServiceTest {
 	
 	@Test
 	public void playerOneAdvantage() {
-		result = test.getScore(4,3);
+		result = test.score(4,3);
 		assertEquals("PlayerOne Advantage",result);
 	}
 	
@@ -126,14 +126,14 @@ public class TennisServiceTest {
 	
 	@Test
 	public void playerTwoAdvantage() {
-		result = test.getScore(3,4);
+		result = test.score(3,4);
 		assertEquals("PlayerTwo Advantage",result);
 	}
 	
 	/* This Test case is to check player one score 2 point after deuce to win game */
 	@Test
 	public void playerOneWin() {
-		result = test.getScore(5,2);
+		result = test.score(5,2);
 		assertEquals("PlayerOne Wins the Game  { Statics :- PlayerOne Won : 5 Points ; PlayerTwo Won : 2 Points }"
 				,result);
 	}
@@ -142,7 +142,7 @@ public class TennisServiceTest {
 	
 	@Test
 	public void playerTwoWin() {
-		result = test.getScore(15,17);
+		result = test.score(15,17);
 		assertEquals("PlayerTwo Wins the Game  { Statics :- PlayerOne Won : 15 Points ; PlayerTwo Won : 17 Points }"
 				,result);
 	}

@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TennisService {
-	int playerOneScore;
-	int playerTwoScore;
 	
 	HashMap<Integer,String> score = new HashMap<Integer,String>(){{
         put(0, "Love");
@@ -16,18 +14,22 @@ public class TennisService {
         put(3, "Forty");
 	}};
 	
+	HashMap<String,Integer> points = new HashMap<String, Integer>(){{
+		put("playerOneScore",0);
+		put("playerTwoScore",0);
+	}};
+	
 	public String getScore(int playerOne, int playerTwo) {
-		this.playerOneScore = playerOne;
-		this.playerTwoScore = playerTwo;
-
-		if(playerOneScore>=0 && playerTwoScore >=0) {
-			return (playerOneScore<=3 && playerTwoScore <=3)?deuce():score();
+		if(playerOne>=points.get("playerOneScore") && playerTwo >=points.get("playerTwoScore")) {
+			points.put("playerOneScore", playerOne);
+			points.put("playerTwoScore", playerTwo);
+			return (playerOne<=3 && playerTwo <=3)?deuce(playerOne,playerTwo):score(playerOne,playerTwo);
 		}
 		else
 			return "invalid Score";
 	}
 	
-	private String deuce() {
+	public String deuce(int playerOneScore,int playerTwoScore) {
 		// TODO Auto-generated method stub
 		if (playerOneScore ==3 && playerTwoScore == 3){
 	        return "Deuce";
@@ -40,7 +42,7 @@ public class TennisService {
 	      
 	}
 	
-	private String score() {
+	public String score(int playerOneScore,int playerTwoScore) {
 		// TODO Auto-generated method stub
 	int score = playerOneScore - playerTwoScore;
 	
@@ -49,19 +51,24 @@ public class TennisService {
         }
 
 	if(Math.signum(score)==1){
-	    return (score>=2)? "PlayerOne Wins the Game "+statics():"PlayerOne "+"Advantage";}
+	    return (score>=2)? "PlayerOne Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerOne "+"Advantage";}
 
 	else{
-	    return (score<=-2)?"PlayerTwo Wins the Game "+statics():"PlayerTwo "+"Advantage";
-	}
+	    return (score<=-2)?"PlayerTwo Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerTwo "+"Advantage";
+		}
 
 	}
 
-	private String statics() {
-	// TODO Auto-generated method stub
+	private String statics(int playerOneScore,int playerTwoScore) {
+		// TODO Auto-generated method stub
+	
 	return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
 
 	}
+
+	
+	
+	
 
 }
 
