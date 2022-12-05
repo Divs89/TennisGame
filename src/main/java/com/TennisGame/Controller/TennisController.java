@@ -15,5 +15,13 @@ public class TennisController {
 	public String tennis(@PathVariable int playerOne,@PathVariable int playerTwo) {
 		return tennisService.getScore(playerOne,playerTwo);
 	}
+	
+	/* To start a New Game or to reset the score */
+	
+	@GetMapping ("/newGame")
+	public String newGame() {
+		tennisService.resetScore();
+		return "Love - All";
+	}
 
 }

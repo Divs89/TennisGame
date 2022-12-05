@@ -44,17 +44,17 @@ public class TennisService {
 	
 	public String score(int playerOneScore,int playerTwoScore) {
 		// TODO Auto-generated method stub
-	int score = playerOneScore - playerTwoScore;
+		int score = playerOneScore - playerTwoScore;
 	
-	if (playerOneScore == playerTwoScore){
-        return "Deuce";
+		if (playerOneScore == playerTwoScore){
+			return "Deuce";
         }
 
-	if(Math.signum(score)==1){
-	    return (score>=2)? "PlayerOne Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerOne "+"Advantage";}
+		if(Math.signum(score)==1){
+			return (score>=2)? "PlayerOne Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerOne "+"Advantage";}
 
-	else{
-	    return (score<=-2)?"PlayerTwo Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerTwo "+"Advantage";
+		else{
+			return (score<=-2)?"PlayerTwo Wins the Game "+statics(playerOneScore,playerTwoScore):"PlayerTwo "+"Advantage";
 		}
 
 	}
@@ -62,11 +62,18 @@ public class TennisService {
 	private String statics(int playerOneScore,int playerTwoScore) {
 		// TODO Auto-generated method stub
 	
-	return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
+		resetScore();	
+		return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
 
 	}
 
-	
+	public void resetScore() {
+		// TODO Auto-generated method stub
+		points.put("playerOneScore", 0);
+		points.put("playerTwoScore", 0);
+		
+		
+	}
 	
 	
 
