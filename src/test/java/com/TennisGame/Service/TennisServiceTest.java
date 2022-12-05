@@ -134,7 +134,7 @@ public class TennisServiceTest {
 	@Test
 	public void playerOneWin() {
 		result = test.getScore(5,2);
-		assertEquals("PlayerOne Wins the Game \n {Statics :\nPlayerOne Won : 5 Points ;\nPlayerTwo Won : 2 Points }"
+		assertEquals("PlayerOne Wins the Game  { Statics :- PlayerOne Won : 5 Points ; PlayerTwo Won : 2 Points }"
 				,result);
 	}
 	
@@ -143,7 +143,7 @@ public class TennisServiceTest {
 	@Test
 	public void playerTwoWin() {
 		result = test.getScore(15,17);
-		assertEquals("PlayerTwo Wins the Game \n {Statics :\nPlayerOne Won : 15 Points ;\nPlayerTwo Won : 17 Points }"
+		assertEquals("PlayerTwo Wins the Game  { Statics :- PlayerOne Won : 15 Points ; PlayerTwo Won : 17 Points }"
 				,result);
 	}
 

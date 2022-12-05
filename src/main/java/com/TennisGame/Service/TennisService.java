@@ -43,19 +43,23 @@ public class TennisService {
 	private String score() {
 		// TODO Auto-generated method stub
 	int score = playerOneScore - playerTwoScore;
+	
+	if (playerOneScore == playerTwoScore){
+        return "Deuce";
+        }
 
 	if(Math.signum(score)==1){
-	    return (score>=2)? "PlayerOne Wins the Game "+'\n'+statics():"PlayerOne "+"Advantage";}
+	    return (score>=2)? "PlayerOne Wins the Game "+statics():"PlayerOne "+"Advantage";}
 
 	else{
-	    return (score<=-2)?"PlayerTwo Wins the Game "+'\n'+statics():"PlayerTwo "+"Advantage";
+	    return (score<=-2)?"PlayerTwo Wins the Game "+statics():"PlayerTwo "+"Advantage";
 	}
 
 	}
 
 	private String statics() {
 	// TODO Auto-generated method stub
-	return (" {Statics :\nPlayerOne Won : "+playerOneScore+ " Points ;\nPlayerTwo Won : "+ playerTwoScore+" Points }");
+	return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
 
 	}
 
